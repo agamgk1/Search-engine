@@ -1,0 +1,9 @@
+GET http://localhost:8080/search?term=brown
+Accept: application/json
+
+###
+
+GET http://localhost:8080/search?term=fox
+Accept: application/json
+
+###
