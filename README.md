@@ -18,6 +18,8 @@ A search for "brown" should now return the list: [document 1, document 2] A sear
 
 ``` mvn clean test```
 
+[In httpRequsts directory you will find necessary requests to work with program]
+
 **Technologies:**
 
 - Java 16
