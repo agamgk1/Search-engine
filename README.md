@@ -27,4 +27,5 @@ A search for "brown" should now return the list: [document 1, document 2] A sear
 - Spring Boot 2
 - JUnit
 - AssertJ
+- Mockito
 
