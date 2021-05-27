@@ -1,12 +1,10 @@
 package com.findwise;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 @RestController
 class SearchController {
@@ -18,18 +16,15 @@ class SearchController {
         this.searchEngine = searchEngine;
     }
 
-
     @GetMapping(value = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
     List<IndexEntry> search(@RequestParam String term) {
         return searchEngine.search(term);
     }
 
     @PostMapping(value = "/documents")
-    public @ResponseBody
     Map<String, String> addDocuments(@RequestBody List<String> documentList) {
 
-        Map<String, String> documents = searchEngine.getDocuments();
+        Map<String, String> documents = new TreeMap<>();
         documentList.forEach(content -> {
             String id = String.join("","document",Integer.toString(counter++));
             documents.put(id, content);
